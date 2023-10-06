@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApplicationController;
+use App\Http\Controllers\SendController;
 use App\Http\Controllers\TourController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,4 +20,6 @@ Route::get('/', [TourController::class, 'index']);
 
 Route::get("/tour/{id_tour}/details", [TourController::class, "get_details"]);
 
-Route::post("/application/new", [ApplicationController::class, "new"]);
+Route::post("/application/new", [ApplicationController::class, "newApplication"])->name("newApplication");
+
+Route::post("/subscriber/add", [SendController::class, "addSubscriber"])->name("addSubscriber");

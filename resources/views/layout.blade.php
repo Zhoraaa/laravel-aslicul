@@ -8,8 +8,14 @@
     <title>Аслыкуль</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -55,10 +61,11 @@
                 </a>
                 <div>
                     <p>Готовы к путешествию?</p>
-                    <button data-bs-toggle="modal" data-bs-target="#exampleModal">Вперёд</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                        data-target="#readyToAdventure">Вперёд</button>
                     <!-- Модальное окно -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
+                    <form action="{{ route('newApplication') }}" method="POST" class="modal fade" id="readyToAdventure" tabindex="-1" role="dialog"
+                        aria-labelledby="readyToAdventureTitle" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -93,19 +100,19 @@
                                     </form>
                                 </div>
                                 <div class="modal-footer justify-content-between">
-                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Закрыть окно</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
                                     <input class="btn btn-primary" type="submit" value="Отправить">
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
             <hr>
             <section>
                 <div id="want-send">
                     <h2>Заинтересовало? Подпишись на рассылку!</h2>
-                    <form method="POST" action="" class="send-form">
+                    <form method="POST" action="{{ route('addSubscriber') }}" class="send-form">
                         <input type="email" placeholder="Ваш email">
                         <button>→</button>
                     </form>

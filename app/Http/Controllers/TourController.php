@@ -11,7 +11,7 @@ class TourController extends Controller
     public function index()
     {
         $tours = Tour::all();
-        dd($tours);
+        // dd($tours);
         return view('index', [
             "all_tours" => $tours,
         ]);
