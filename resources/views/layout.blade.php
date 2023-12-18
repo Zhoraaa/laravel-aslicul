@@ -94,7 +94,7 @@
                                         <div class="mb-3">
                                             <label for="coul_seats" class="form-label  fs-6">Введите кол-во мест</label>
                                             <input type="number" class="form-control" id="coul_seats"
-                                                name="counter_passengers" required>
+                                                name="count_passengers" required>
                                         </div>
                                     </form>
                                 </div>
@@ -113,7 +113,7 @@
                     <h2>Заинтересовало? Подпишись на рассылку!</h2>
                     <form method="POST" action="{{ route('addSubscriber') }}" class="send-form">
                         @csrf
-                        <input type="email" placeholder="Ваш email">
+                        <input type="email" placeholder="Ваш email" name="email">
                         <button>→</button>
                     </form>
                 </div>

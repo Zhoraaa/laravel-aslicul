@@ -16,7 +16,7 @@
                 <img src="/imgs/tours/{{ $tour['image'] }}" alt="">
             </div>
         </div>
-        <form action="/application/new" method="POST" class="vertical">
+        <form action="{{ route('newAplctnId', ['id' => $tour['id']]) }}" method="POST" class="vertical">
             @csrf
             <div><input type="text" name="name" placeholder="Имя"></div>
             <div><input type="email" name="email" placeholder="Email"></div>

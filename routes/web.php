@@ -21,5 +21,6 @@ Route::get('/', [TourController::class, 'index']);
 Route::get("/tour/{id_tour}/details", [TourController::class, "get_details"]);
 
 Route::post("/application/new", [ApplicationController::class, "newApplication"])->name("newApplication");
+Route::post("/application/new/{id}", [ApplicationController::class, "newApplication"])->name("newAplctnId");
 
 Route::post("/subscriber/add", [SendController::class, "addSubscriber"])->name("addSubscriber");
