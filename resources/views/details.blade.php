@@ -13,7 +13,7 @@
                 <p>Количество мест: {{ $tour['count_seats'] }}</p>
             </div>
             <div class="tour-cover">
-                <img src="/imgs/{{ $tour['image'] }}" alt="">
+                <img src="/imgs/tours/{{ $tour['image'] }}" alt="">
             </div>
         </div>
         <form action="/application/new" method="POST" class="vertical">

@@ -17,12 +17,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="{{ asset('style.css') }}">
 </head>
 
 <body>
-
-    <main>
+    <main class="darker">
         <header>
             <a href="/">
                 <svg width="134" height="16" viewBox="0 0 134 22" fill="none"
@@ -113,6 +112,7 @@
                 <div id="want-send">
                     <h2>Заинтересовало? Подпишись на рассылку!</h2>
                     <form method="POST" action="{{ route('addSubscriber') }}" class="send-form">
+                        @csrf
                         <input type="email" placeholder="Ваш email">
                         <button>→</button>
                     </form>
@@ -137,6 +137,7 @@
             </section>
         </footer>
     </main>
+</section>
 </body>
 
 </html>
